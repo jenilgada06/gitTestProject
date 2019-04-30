@@ -72,13 +72,119 @@ body {font-family: Arial;}
 </div>
 
 <div id="batch_status" class="tabcontent">
-  <h3>BATCH STATUS</h3>
-  <p>London is the capital city of England.</p>
-  
-  
-  
-  
-	<div>
+  <div>
+    <table id="batch_status">
+        <tr>
+            <th colspan="13">BATCH STATUS</th>
+        </tr>
+    <tr>
+        <th></th>
+        <th>ASIA</th>
+        <th>AUNZ</th>
+        <th>ZURI</th>
+        <th>EURO</th>
+        <th>LDNL</th>
+        <th>AMER</th>
+        <th>PP80 NETT</th>
+        <th>GLB3</th>
+        <th>WMDE</th>
+        <th>USRG</th>
+        <th>5G</th>
+        <th>BD FR2004</th>
+    </tr>
+    <tr>
+        <th>BATCH START</th>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+    <!--<td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>-->
+    </tr>
+    <tr>
+        <th>GATE CLOSE</th> 
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+    <!--<td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>-->
+    </tr>
+    <tr>
+        <th>DLY MERIVAL</th> 
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>PENDING</td>
+        <td>COMPLETED</td>
+        <td>PENDING</td>
+    <!--<td id="greyedout"></td>
+        <td id="greyedout"></td>-->   
+    </tr>
+    <tr>
+        <th>AXIOM</th> 
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td id="greyedout"></td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+    <!--<td>COMPLETED</td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>-->
+        <td>COMPLETED</td>
+        <td>IN PROGRESS</td>   
+    </tr>
+    <tr>
+        <th>MRP</th>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+    <!--<td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>-->
+    </tr>
+    <tr>
+        <th>DIRECT FOR FEEDS</th>
+        <td>COMPLETED</td>
+        <td id="greyedout"></td>
+        <td>COMPLETED</td>
+        <td>COMPLETED</td>
+        <td id="greyedout"></td>
+        <td>COMPLETED</td>
+    <!--<td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>-->
+    </tr>
+    </table>
+  </div>
+  <div>
 		<h4>DLY LCR STATUS (MERIVAL)</h4>
 		<table>
 			<tr>
@@ -117,8 +223,82 @@ body {font-family: Arial;}
 </div>
 
 <div id="gear" class="tabcontent">
-  <h3>GEAR</h3>
-  <p>Paris is the capital of France.</p> 
+  <table id="gear_merival_status">
+    <tr>
+        <th colspan="2"></th>
+        <th>WMCH</th>
+        <th>WMUS</th>
+    </tr>
+    <tr>
+        <th rowspan="2">GEAR</th>
+        <th>1<sup>st</sup> CUT</th>
+        <td><select name="wmch_gear_1">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+          <option value="PENDING">PENDING</option></select>
+        </td>
+        <td>
+          <select name="wmus_gear_1">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+					<option value="PENDING">PENDING</option></select>
+        </td>            
+    </tr>
+    <tr>
+        <th>2<sup>nd</sup> CUT</th>
+        <td><select name="wmch_gear_2">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+          <option value="PENDING">PENDING</option></select>
+        </td>
+        <td>
+          <select name="wmus_gear_2">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+					<option value="PENDING">PENDING</option></select>
+        </td>           
+    </tr>
+    <!--<tr>            
+        <th>MONTHLY CUT</th>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>            
+    </tr>-->
+    <tr>
+        <th rowspan="2">MERIVAL</th>
+        <th>1<sup>st</sup> CUT</th>
+        <td><select name="wmch_merival_1">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+          <option value="PENDING">PENDING</option></select>
+        </td>
+        <td>
+          <select name="wmus_merival_1">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+					<option value="PENDING">PENDING</option></select>
+        </td>              
+    </tr>
+    <tr>
+        <th>2<sup>nd</sup> CUT</th>
+        <td><select name="wmch_merival_2">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+          <option value="PENDING">PENDING</option></select>
+        </td>
+        <td>
+          <select name="wmus_merival_2">
+					<option value="COMPLETED">COMPLETED</option>
+					<option value="IN PROGRESS">IN PROGRESS</option>
+					<option value="PENDING">PENDING</option></select>
+        </td>               
+    </tr>
+    <!--<tr>            
+        <th>MONTHLY CUT</th>
+        <td id="greyedout"></td>
+        <td id="greyedout"></td>            
+    </tr>-->
+
+</table> 
 </div>
 
 <div id="mcr" class="tabcontent">
