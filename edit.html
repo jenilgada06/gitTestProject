@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <style>
 body {font-family: Arial;}
 
@@ -72,6 +74,46 @@ body {font-family: Arial;}
 <div id="batch_status" class="tabcontent">
   <h3>BATCH STATUS</h3>
   <p>London is the capital city of England.</p>
+  
+  
+  
+  
+	<div>
+		<h4>DLY LCR STATUS (MERIVAL)</h4>
+		<table>
+			<tr>
+				<td><label>EARLY CUT</label></td>
+				<td><input type="text" name="early_cut" id="early_cut"/></td>
+			</tr>
+			<tr>
+				<td><label>FINAl CUT</label></td>
+				<td><input type="text" name="final_cut" id="final_cut"/></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div>
+		<h4>GATE CLOSE - MISSED FEEDS</h4>
+		<table>
+			<tr>
+				<td><label>APAC</label></td>
+				<td><input type="text" name="apac_miss" id="apac_miss"/></td>
+			</tr>
+			<tr>
+				<td><label>ZURI</label></td>
+				<td><input type="text" name="zuri_miss" id="zuri_miss"/></td>
+			</tr>
+			<tr>
+				<td><label>EMEA</label></td>
+				<td><input type="text" name="emea_miss" id="emea_miss"/></td>
+			</tr>
+			<tr>
+				<td><label>AMER</label></td>
+				<td><input type="text" name="amer_miss" id="amer_miss"/></td>
+			</tr>
+		</table>
+	</div>
+	
 </div>
 
 <div id="gear" class="tabcontent">
@@ -80,18 +122,51 @@ body {font-family: Arial;}
 </div>
 
 <div id="mcr" class="tabcontent">
-  <h3>MCR</h3>
-  <p>Tokyo is the capital of Japan.</p>
+  <h3>MCR CONSOLIDATION STATUS (T-2)</h3>
+  <textarea name="mcr" id="mcr"></textarea>
+  
 </div>
 
 <div id="dbs" class="tabcontent">
-  <h3>DBS</h3>
-  <p>London is the capital city of England.</p>
+		<table>
+			<tr>
+				<td><label>DBS - RAG</label></td>
+				<td><select name="dbs_status">
+					<option value="GREEN">GREEN</option>
+					<option value="AMER">AMER</option>
+					<option value="RED">RED</option></select>
+				</td>
+			</tr>
+			<tr>
+				<td><label>MERIVAL BATCH ISSUES</label></td>
+				<td><input type="text" name="dbs_merival" id="dbs_merival"/></td>
+			</tr>
+			<tr>
+				<td><label>PP80 NETTING MONITORING</label></td>
+				<td><input type="text" name="dbs_pp80" id="dbs_pp80"/></td>
+			</tr>
+			<tr>
+				<td><label>FEED ISSUES</label></td>
+				<td><input type="text" name="dbs_feed" id="dbs_feed"/></td>
+			</tr>
+		</table>
 </div>
 
 <div id="pnl" class="tabcontent">
-  <h3>P&L</h3>
-  <p>London is the capital city of England.</p>
+	<table>
+			<tr>
+				<td><label>P&L DASHBOARD</label></td>
+				<td><select name="pnl_status">
+					<option value="GREEN">GREEN</option>
+					<option value="AMER">AMER</option>
+					<option value="RED">RED</option></select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><textarea name="pnl_issues" id="pnl_issues"></textarea></td>
+			</tr>
+		</table>
+			
 </div>
 
 <div id="one_balance" class="tabcontent">
@@ -101,7 +176,38 @@ body {font-family: Arial;}
 
 <div id="iprod" class="tabcontent">
   <h3>IPROD</h3>
-  <p>London is the capital city of England.</p>
+  <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+            </tr>     
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
 </div>
 
 <div id="other_issues" class="tabcontent">
@@ -123,6 +229,11 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+</script>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
 </script>
    
 </body>
