@@ -2,20 +2,22 @@
 <html>
 <head>
 <style>
-#batch_status, #gear_merival_status, #lcr_merival_status{
+#batch_status, #gear_merival_status, #lcr_merival_status, #mcr_status{
   font-family: "Calibri", Arial, Helvetica, sans-serif;
   font-size: 11px;
   border-collapse: collapse;
   /*width: 100%;*/
 }
 
-#batch_status td, #batch_status th, #gear_merival_status td, #gear_merival_status th, #lcr_merival_status td, #lcr_merival_status th {
+#batch_status td, #batch_status th, #gear_merival_status td, #gear_merival_status th, #lcr_merival_status td, #lcr_merival_status th, #mcr_status td, #mcr_status th {
   border: 1px solid rgb(0,0,0);
   padding: 8px;
 }
 
-
-#batch_status th, #gear_merival_status th, #lcr_merival_status th {
+.batch_div{
+width:100%;
+}
+#batch_status th, #gear_merival_status th, #lcr_merival_status th, #mcr_status th {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: rgb(67,88,126);
@@ -28,21 +30,26 @@ td#greyedout{
 
 #gear_merival_status{
     margin-top: 30px;
-    width:30%;
+    width:40%;
     float: left;
 }
 
 #lcr_merival_status{
-    margin-left: 50px;
+    margin-left: 76px;
     margin-top: 60px;
     float: left;
-} 
+	width:30%;
+}
+
+#mcr_status{
+	width:76%;
+}
 
 </style>
 </head>
 <body>
 
-<div>
+<div class="batch_div">
     <table id="batch_status">
         <tr>
             <th colspan="13">BATCH STATUS</th>
@@ -157,61 +164,75 @@ td#greyedout{
 </div>
 
 <div>
-    <table id="gear_merival_status">
-        <tr>
-            <th colspan="2"></th>
-            <th>WMCH</th>
-            <th>WMUS</th>
-        </tr>
-        <tr>
-            <th rowspan="3">GEAR</th>
-            <th>1<sup>st</sup> CUT</th>
-            <td>PENDING</td>
-            <td>PENDING</td>            
-        </tr>
-        <tr>
-            <th>2<sup>nd</sup> CUT</th>
-            <td>PENDING</td>
-            <td>PENDING</td>            
-        </tr>
-        <tr>            
-            <th>MONTHLY CUT</th>
-            <td id="greyedout"></td>
-            <td id="greyedout"></td>            
-        </tr>
-        <tr>
-            <th rowspan="3">MERIVAL</th>
-            <th>1<sup>st</sup> CUT</th>
-            <td>PENDING</td>
-            <td>PENDING</td>            
-        </tr>
-        <tr>
-            <th>2<sup>nd</sup> CUT</th>
-            <td>PENDING</td>                
-            <td>PENDING</td>            
-        </tr>
-        <tr>            
-            <th>MONTHLY CUT</th>
-            <td id="greyedout"></td>
-            <td id="greyedout"></td>            
-        </tr>
+	<div class="gear_merival_status">
+		<table id="gear_merival_status">
+			<tr>
+				<th colspan="2"></th>
+				<th>WMCH</th>
+				<th>WMUS</th>
+			</tr>
+			<tr>
+				<th rowspan="3">GEAR</th>
+				<th>1<sup>st</sup> CUT</th>
+				<td>PENDING</td>
+				<td>PENDING</td>            
+			</tr>
+			<tr>
+				<th>2<sup>nd</sup> CUT</th>
+				<td>PENDING</td>
+				<td>PENDING</td>            
+			</tr>
+			<tr>            
+				<th>MONTHLY CUT</th>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>            
+			</tr>
+			<tr>
+				<th rowspan="3">MERIVAL</th>
+				<th>1<sup>st</sup> CUT</th>
+				<td>PENDING</td>
+				<td>PENDING</td>            
+			</tr>
+			<tr>
+				<th>2<sup>nd</sup> CUT</th>
+				<td>PENDING</td>                
+				<td>PENDING</td>            
+			</tr>
+			<tr>            
+				<th>MONTHLY CUT</th>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>            
+			</tr>
 
-    </table>
+		</table>
+	</div>
+
+	<div>
+		<table id="lcr_merival_status">
+			<tr>
+				<th colspan="2">DLY LCR STATUS (MERIVAL)</th>
+			</tr>
+			<tr>
+				<th class="">EARLY CUT</th>
+				<td>COMPLETED</td>           
+			</tr>
+			<tr>
+				<th class="">FINAL CUT</th>
+				<td>COMPLETED</td>           
+			</tr>
+		</table>
+	</div>
 </div>
 
-
 <div>
-    <table id="lcr_merival_status">
+	 <table id="mcr_status">
         <tr>
-            <th colspan="2">DLY LCR STATUS (MERIVAL)</th>
+            <th>MCR CONSOLIDATION STATUS (T-2)</th>
         </tr>
         <tr>
-            <th>EARLY CUT</th>
-            <td>COMPLETED</td>           
-        </tr>
-        <tr>
-            <th>FINAL CUT</th>
-            <td>COMPLETED</td>           
+            <td>Daily(T-2) – In Progress
+				Monthly - NA 
+			</td>          
         </tr>
     </table>
 </div>
