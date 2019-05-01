@@ -2,22 +2,75 @@
 <html>
 <head>
 <style>
-#batch_status, #gear_merival_status, #lcr_merival_status, #mcr_status{
+
+.main_div{
+    width: 100%;
+    margin-left: 10px;
+}
+
+.gear_merival_div, .batch_status, .mcr_div, .missed_feeds_div , .pnl_div, .dbs_div{
+    width:80%;
+}
+
+.gear_merival_status_div{
+    margin-top: 30px;
+    display: inline-block;
+    width:45%;
+}
+
+.lcr_merival_status_div{
+    margin-top: 60px;
+    float: right;
+    width: 30%;
+}
+
+.gear_merival_status, .lcr_merival_status, .mcr_status, .missed_feeds_status, .dbs_status, .pnl_status{
+    width:100%;
+}
+
+.mcr_div, .missed_feeds_div, .dbs_div, .pnl_div{
+    clear: both;
+    margin-top: 30px;
+    text-align: justify;
+}
+
+.gear_merival_status td{
+    text-align: center;
+}
+
+.merival_head{
+    width: 30%;
+    text-align: justify;
+}
+
+.gear_head{
+    width: 20%;
+    text-align: justify;
+}
+
+
+
+.pnl_status_head{
+    width:90%;
+}
+
+.feed_head{
+    width: 10%;
+}
+
+#batch_status, #gear_merival_status, #lcr_merival_status, #mcr_status, #missed_feeds_status ,#dbs_status, #pnl_status{
   font-family: "Calibri", Arial, Helvetica, sans-serif;
   font-size: 11px;
   border-collapse: collapse;
-  /*width: 100%;*/
 }
 
-#batch_status td, #batch_status th, #gear_merival_status td, #gear_merival_status th, #lcr_merival_status td, #lcr_merival_status th, #mcr_status td, #mcr_status th {
+#batch_status td, #batch_status th, #gear_merival_status td, #gear_merival_status th, #lcr_merival_status td, #lcr_merival_status th, #mcr_status td, #mcr_status th, #missed_feeds_status td, #missed_feeds_status th, #dbs_status td, #dbs_status th, #pnl_status td, #pnl_status th {
   border: 1px solid rgb(0,0,0);
   padding: 8px;
 }
 
-.batch_div{
-width:100%;
-}
-#batch_status th, #gear_merival_status th, #lcr_merival_status th, #mcr_status th {
+
+#batch_status th, #gear_merival_status th, #lcr_merival_status th, #mcr_status th, #missed_feeds_status th, #dbs_status th, #pnl_status th{
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: rgb(67,88,126);
@@ -28,213 +81,257 @@ td#greyedout{
     background-color: rgb(128,128,128);
 }
 
-#gear_merival_status{
-    margin-top: 30px;
-    width:40%;
-    float: left;
-}
-
-#lcr_merival_status{
-    margin-left: 76px;
-    margin-top: 60px;
-    float: left;
-	width:30%;
-}
-
-#mcr_status{
-	width:76%;
-}
-
 </style>
 </head>
 <body>
 
-<div class="batch_div">
-    <table id="batch_status">
-        <tr>
-            <th colspan="13">BATCH STATUS</th>
-        </tr>
-    <tr>
-        <th></th>
-        <th>ASIA</th>
-        <th>AUNZ</th>
-        <th>ZURI</th>
-        <th>EURO</th>
-        <th>LDNL</th>
-        <th>AMER</th>
-        <th>PP80 NETT</th>
-        <th>GLB3</th>
-        <th>WMDE</th>
-        <th>USRG</th>
-        <th>5G</th>
-        <th>BD FR2004</th>
-    </tr>
-    <tr>
-        <th>BATCH START</th>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-    </tr>
-    <tr>
-        <th>GATE CLOSE</th> 
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-    </tr>
-    <tr>
-        <th>DLY MERIVAL</th> 
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>PENDING</td>
-        <td>COMPLETED</td>
-        <td>PENDING</td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>    
-    </tr>
-    <tr>
-        <th>Axiom</th>  
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td>COMPLETED</td>
-        <td>IN PROGRESS</td>   
-    </tr>
-    <tr>
-        <th>MRP</th>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-    </tr>
-    <tr>
-        <th>DIRECT FOR FEEDS</th>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td>COMPLETED</td>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td>COMPLETED</td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-        <td id="greyedout"></td>
-    </tr>
+<div class="main_div">    
     
-    </table>
-</div>
-
-<div>
-	<div class="gear_merival_status">
-		<table id="gear_merival_status">
-			<tr>
-				<th colspan="2"></th>
-				<th>WMCH</th>
-				<th>WMUS</th>
-			</tr>
-			<tr>
-				<th rowspan="3">GEAR</th>
-				<th>1<sup>st</sup> CUT</th>
-				<td>PENDING</td>
-				<td>PENDING</td>            
-			</tr>
-			<tr>
-				<th>2<sup>nd</sup> CUT</th>
-				<td>PENDING</td>
-				<td>PENDING</td>            
-			</tr>
-			<tr>            
-				<th>MONTHLY CUT</th>
-				<td id="greyedout"></td>
-				<td id="greyedout"></td>            
-			</tr>
-			<tr>
-				<th rowspan="3">MERIVAL</th>
-				<th>1<sup>st</sup> CUT</th>
-				<td>PENDING</td>
-				<td>PENDING</td>            
-			</tr>
-			<tr>
-				<th>2<sup>nd</sup> CUT</th>
-				<td>PENDING</td>                
-				<td>PENDING</td>            
-			</tr>
-			<tr>            
-				<th>MONTHLY CUT</th>
-				<td id="greyedout"></td>
-				<td id="greyedout"></td>            
-			</tr>
-
-		</table>
-	</div>
-
-	<div>
-		<table id="lcr_merival_status">
-			<tr>
-				<th colspan="2">DLY LCR STATUS (MERIVAL)</th>
-			</tr>
-			<tr>
-				<th class="">EARLY CUT</th>
-				<td>COMPLETED</td>           
-			</tr>
-			<tr>
-				<th class="">FINAL CUT</th>
-				<td>COMPLETED</td>           
-			</tr>
-		</table>
-	</div>
-</div>
-
-<div>
-	 <table id="mcr_status">
+    <table id="batch_status" class="batch_status">
+            <tr>
+                <th colspan="13">BATCH STATUS</th>
+            </tr>
         <tr>
-            <th>MCR CONSOLIDATION STATUS (T-2)</th>
+            <th></th>
+            <th>ASIA</th>
+            <th>AUNZ</th>
+            <th>ZURI</th>
+            <th>EURO</th>
+            <th>LDNL</th>
+            <th>AMER</th>
+            <th>PP80 NETT</th>
+            <th>GLB3</th>
+            <th>WMDE</th>
+            <th>USRG</th>
+            <th>5G</th>
+            <th>BD FR2004</th>
         </tr>
         <tr>
-            <td>Daily(T-2) – In Progress
-				Monthly - NA 
-			</td>          
+            <th>BATCH START</th>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
         </tr>
+        <tr>
+            <th>GATE CLOSE</th> 
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+        </tr>
+        <tr>
+            <th>DLY MERIVAL</th> 
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>PENDING</td>
+            <td>COMPLETED</td>
+            <td>PENDING</td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>    
+        </tr>
+        <tr>
+            <th>Axiom</th>  
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td>COMPLETED</td>
+            <td>IN PROGRESS</td>   
+        </tr>
+        <tr>
+            <th>MRP</th>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+        </tr>
+        <tr>
+            <th>DIRECT FOR FEEDS</th>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td>COMPLETED</td>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td>COMPLETED</td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+        </tr>
+        
     </table>
+
+    <div class="gear_merival_div">
+        <div class="gear_merival_status_div">
+            <table id="gear_merival_status" class="gear_merival_status">
+                <tr>
+                    <th class="gear_head" colspan="2"></th>
+                    <th>WMCH</th>
+                    <th>WMUS</th>
+                </tr>
+                <tr>
+                    <th rowspan="3" class="gear_head">GEAR</th>
+                    <th class="gear_head">1<sup>st</sup> CUT</th>
+                    <td>PENDING</td>
+                    <td>PENDING</td>            
+                </tr>
+                <tr>
+                    <th class="gear_head">2<sup>nd</sup> CUT</th>
+                    <td>PENDING</td>
+                    <td>PENDING</td>            
+                </tr>
+                <tr>            
+                    <th class="gear_head">MONTHLY CUT</th>
+                    <td id="greyedout"></td>
+                    <td id="greyedout"></td>            
+                </tr>
+                <tr>
+                    <th rowspan="3" class="gear_head">MERIVAL</th>
+                    <th class="gear_head">1<sup>st</sup> CUT</th>
+                    <td>PENDING</td>
+                    <td>PENDING</td>            
+                </tr>
+                <tr>
+                    <th class="gear_head">2<sup>nd</sup> CUT</th>
+                    <td>PENDING</td>                
+                    <td>PENDING</td>            
+                </tr>
+                <tr>            
+                    <th class="gear_head">MONTHLY CUT</th>
+                    <td id="greyedout"></td>
+                    <td id="greyedout"></td>            
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="lcr_merival_status_div">
+            <table id="lcr_merival_status" class="lcr_merival_status">
+                <tr>
+                    <th colspan="2">DLY LCR STATUS (MERIVAL)</th>
+                </tr>
+                <tr>
+                    <th class="merival_head">EARLY CUT</th>
+                    <td>COMPLETED</td>           
+                </tr>
+                <tr>
+                    <th class="merival_head">FINAL CUT</th>
+                    <td>COMPLETED</td>           
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="mcr_div">
+        <table id="mcr_status" class="mcr_status">
+            <tr>
+                <th>MCR CONSOLIDATION STATUS (T-2)</th>
+            </tr>
+            <tr>
+                <td>Daily(T-2) ï¿½ In Progress
+                    Monthly - NA 
+                </td>          
+            </tr>
+        </table>
+    </div>
+
+    <div class="missed_feeds_div">
+        <table id="missed_feeds_status" class="missed_feeds_status">
+            <tr>
+                <th colspan="2">GATE CLOSE - MISSED FEEDS</th>
+            </tr>
+            <tr>
+                <th class="feed_head">APAC</th>
+                <td>None.</td>
+            </tr>
+            <tr>
+                <th class="feed_head">ZURI</th>
+                <td>None.</td>
+            </tr>
+             <tr>
+                <th class="feed_head">EMEA</th>
+                <td>None.</td>
+            </tr>
+            <tr>
+                <th class="feed_head">AMER</tdh>
+                <td>None.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="" class="dbs_div">
+        <table id="dbs_status" class="dbs_status">
+            <tr>
+                <th class="dbs_status_head">DBS - RAG                                                                        
+                    
+                </th>
+                <td>NA</td>
+            </tr>
+            <tr>
+                <th class="dbs_head">MERIVAL BATCH ISSUES</th>
+                <td></td>                
+            </tr>
+            <tr>
+                <th class="dbs_head">PP80 NETTING MONITORING</th>
+                <td></td>                
+            </tr>
+            <tr>
+                <th class="dbs_head">FEED ISSUES</th>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="" class="pnl_div">
+        <table id="pnl_status" class="pnl_status"> 
+            <tr>
+                <th class="pnl_status_head">P&L DASHBOARD</th>
+                <td>NA</td>
+            </tr>
+            <tr>
+                <td colspan="2">issues</td>
+            </tr>
+        </table>          
+    </div>
+
 </div>
 
 </body>
