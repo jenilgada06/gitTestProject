@@ -8,8 +8,19 @@
     margin-left: 10px;
 }
 
-.gear_merival_div, .batch_status, .mcr_div, .missed_feeds_div , .pnl_div, .dbs_div{
-    width:80%;
+.batch_status{
+	width:60%;
+}
+.gear_merival_div, .mcr_div, .missed_feeds_div , .pnl_div, .dbs_div, .one_bal_div{
+    width:50%;
+}
+
+.iprod_div{
+	width:70%;
+}
+
+.signi_issues_div{
+	width: 55%;
 }
 
 .gear_merival_status_div{
@@ -24,7 +35,8 @@
     width: 30%;
 }
 
-.gear_merival_status, .lcr_merival_status, .mcr_status, .missed_feeds_status, .dbs_status, .pnl_status{
+.gear_merival_status, .lcr_merival_status, .mcr_status, .missed_feeds_status, .dbs_status, .pnl_status, .one_bal_status, .signi_issues_status,
+.iprod_status{
     width:100%;
 }
 
@@ -34,11 +46,15 @@
     text-align: justify;
 }
 
-.gear_merival_status td{
+.one_bal_div{
+	margin-top: 30px;
+}
+
+.gear_merival_status td, .one_bal_status td, .batch_status td, .iprod_status td{
     text-align: center;
 }
 
-.merival_head{
+.merival_head, .one_bal_head{
     width: 30%;
     text-align: justify;
 }
@@ -48,8 +64,6 @@
     text-align: justify;
 }
 
-
-
 .pnl_status_head{
     width:90%;
 }
@@ -57,22 +71,32 @@
 .feed_head{
     width: 10%;
 }
+.signi_issues_status th{
+	text-align:justify;
+}
+.signi_issues_status td, .iprod_status td{
+	height:70px;
+}
 
-#batch_status, #gear_merival_status, #lcr_merival_status, #mcr_status, #missed_feeds_status ,#dbs_status, #pnl_status{
+#batch_status, #gear_merival_status, #lcr_merival_status, #mcr_status, #missed_feeds_status ,#dbs_status, #pnl_status, #one_bal_status,
+#signi_issues_status, #iprod_status{
   font-family: "Calibri", Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   border-collapse: collapse;
 }
 
-#batch_status td, #batch_status th, #gear_merival_status td, #gear_merival_status th, #lcr_merival_status td, #lcr_merival_status th, #mcr_status td, #mcr_status th, #missed_feeds_status td, #missed_feeds_status th, #dbs_status td, #dbs_status th, #pnl_status td, #pnl_status th {
+#batch_status td, #batch_status th, #gear_merival_status td, #gear_merival_status th, #lcr_merival_status td, #lcr_merival_status th, 
+#mcr_status td, #mcr_status th, #missed_feeds_status td, #missed_feeds_status th, #dbs_status td, #dbs_status th, #pnl_status td, 
+#pnl_status th, #one_bal_status td, #one_bal_status th, #signi_issues_status td, #signi_issues_status th, #iprod_status td, #iprod_status th {
   border: 1px solid rgb(0,0,0);
   padding: 8px;
 }
 
 
-#batch_status th, #gear_merival_status th, #lcr_merival_status th, #mcr_status th, #missed_feeds_status th, #dbs_status th, #pnl_status th{
-  padding-top: 10px;
-  padding-bottom: 10px;
+#batch_status th, #gear_merival_status th, #lcr_merival_status th, #mcr_status th, #missed_feeds_status th, #dbs_status th, #pnl_status th, 
+#one_bal_status th, #signi_issues_status th, #iprod_status th{
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: rgb(67,88,126);
   color: white;
 }
@@ -87,10 +111,13 @@ td#greyedout{
 
 <div class="main_div">    
     
+	<h4>Please find the updates for APAC SoD call,</h4>
+	
     <table id="batch_status" class="batch_status">
-            <tr>
-                <th colspan="13">BATCH STATUS</th>
-            </tr>
+		<tbody id="tby1">
+        <tr>
+            <th colspan="13">BATCH STATUS</th>
+        </tr>
         <tr>
             <th></th>
             <th>ASIA</th>
@@ -108,12 +135,12 @@ td#greyedout{
         </tr>
         <tr>
             <th>BATCH START</th>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">PENDING</td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
@@ -123,12 +150,12 @@ td#greyedout{
         </tr>
         <tr>
             <th>GATE CLOSE</th> 
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
@@ -138,42 +165,42 @@ td#greyedout{
         </tr>
         <tr>
             <th>DLY MERIVAL</th> 
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>PENDING</td>
-            <td>COMPLETED</td>
-            <td>PENDING</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">PENDING</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">PENDING</td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>    
         </tr>
         <tr>
             <th>Axiom</th>  
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
             <td id="greyedout"></td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td id="greyedout"></td>
-            <td id="greyedout"></td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
-            <td>COMPLETED</td>
-            <td>IN PROGRESS</td>   
+            <td id="greyedout"></td>
+            <td id="greyedout"></td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">IN PROGRESS</td>   
         </tr>
         <tr>
             <th>MRP</th>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
@@ -183,12 +210,12 @@ td#greyedout{
         </tr>
         <tr>
             <th>DIRECT FOR FEEDS</th>
-            <td>COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
             <td id="greyedout"></td>
-            <td>COMPLETED</td>
-            <td>COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
             <td id="greyedout"></td>
-            <td>COMPLETED</td>
+            <td class="batch_status_td">COMPLETED</td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
             <td id="greyedout"></td>
@@ -196,7 +223,7 @@ td#greyedout{
             <td id="greyedout"></td>
             <td id="greyedout"></td>
         </tr>
-        
+		</tbody>
     </table>
 
     <div class="gear_merival_div">
@@ -243,14 +270,14 @@ td#greyedout{
             </table>
         </div>
 
-        <div class="lcr_merival_status_div">
+		<div class="lcr_merival_status_div">
             <table id="lcr_merival_status" class="lcr_merival_status">
                 <tr>
                     <th colspan="2">DLY LCR STATUS (MERIVAL)</th>
                 </tr>
                 <tr>
                     <th class="merival_head">EARLY CUT</th>
-                    <td>COMPLETED</td>           
+                    <td>COMPLETED	COMPLETED	COMPLETED	COMPLETED	COMPLETED</td>           
                 </tr>
                 <tr>
                     <th class="merival_head">FINAL CUT</th>
@@ -327,12 +354,171 @@ td#greyedout{
                 <td>NA</td>
             </tr>
             <tr>
-                <td colspan="2">issues</td>
+                <td colspan="2">issues</br> issues</br> issues</td>
             </tr>
         </table>          
     </div>
 
+	<div id="" class="one_bal_div">
+		<table id="one_bal_status" class="one_bal_status">
+            <tr>
+                <th colspan="6">ONE BALANCE FEEDS - LOAD STATUS – 25th April LBD</th>
+            </tr>
+			<tr>
+				<th></th>
+				<th>AUS</th>
+				<th>APAC</th>
+				<th>ZURI</th>
+				<th>EMEA</th>
+				<th>AMER</th>
+			</tr>
+			<tr>
+				<th class="one_bal_head">MUREX (TRADING P&L)</th>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td>COMPLETED</td>
+			</tr>
+			<tr>
+				<th class="one_bal_head">MUREX (TRADING P&L + TRADING P&L LEDGER)</th>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td>COMPLETED</td>
+			</tr>
+			<tr>
+				<th class="one_bal_head">EQUITIES (TRADING P&L)</th> 
+				<td>COMPLETED</td>
+				<td>COMPLETED</td>
+			   <td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td>COMPLETED</td>   
+			</tr>
+			<tr>
+				<th class="one_bal_head">EQUITIES (TRADING P&L + TRADING P&L LEDGER)</th>  
+				<td>COMPLETED</td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td>COMPLETED</td>
+			</tr>
+			<tr>
+				<th class="one_bal_head">NEOR</th>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td>COMPLETED</td>
+			</tr>
+			<tr>
+				<th class="one_bal_head">PENTA</th>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+			</tr>
+			<tr>
+				<th class="one_bal_head">MONACO</th>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+			</tr>
+			<tr>
+				<th class="one_bal_head">RISK ANALYTICS</th>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+			</tr>
+			<tr>
+				<th class="one_bal_head">FINACLE</th>
+				<td id="greyedout"></td>
+				<td>COMPLETED</td>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+				<td id="greyedout"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="iprod_div" class="iprod_div">
+		<h5>iProd – Open / Closed: </h5>
+		<table id="iprod_status" class="iprod_status">
+			<tr>
+				<th>S.NO.</th>
+				<th>STREAM</th>
+				<th>SERVICE IMPACTED</th>
+				<th>SEVERITY</th>
+				<th>INCIDENT</th>
+				<th>ISSUE DESCRIPTION</th>
+				<th>CURRENT STATUS</th>
+				<th>BUSINESS IMPACT</th>
+				<th>ROOT CAUSE</th>
+				<th>INCIDENT CHANNEL</th>
+			</tr>
+			<tr>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+				<td>NA</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="signi_issues_div" class="signi_issues_div">
+		<h5>Other Significant Issues / Updates:</h5>
+		<table id="signi_issues_status" class="signi_issues_status">
+            <tr>
+                <th class="feed_head">RCA</th>
+                <td>Issue: </br>
+					Root cause: </br>
+					Solution: </br>
+					Status : </br>
+					Incident: </br> 
+				</td>
+            </tr>
+            <tr>
+                <th class="feed_head">ONE BALANCE</th>
+                <td>None.</td>
+            </tr>
+             <tr>
+                <th class="feed_head">P&L</th>
+                <td>None.</td>
+            </tr>
+            <tr>
+                <th class="feed_head">GRLS</tdh>
+                <td>None.</td>
+            </tr>
+        </table>
+	</div>
 </div>
 
+
+
+
+<script type="text/javascript">
+
+			var cells = document.getElementsByClassName('batch_status_td');
+			console.log(cells);
+			for (var i = 0; i < cells.length; i++) {
+				if(cells[i].innerHTML == 'COMPLETED')
+				{
+					console.log("inside");
+					cells[i].style['background-color'] = '#92d050';
+				}
+			}
+</script>
 </body>
 </html>
